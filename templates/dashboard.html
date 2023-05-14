@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>To Do List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Task</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event_id, event in events.items() %}
+            <tr>
+                <td>{{ event.time }}</td>
+                <td>{{ event.task }}</td>
+                <td> 
+                    <form action="/delete/{{ event_id }}" method="post" >
+                        <div>
+                            <button class="delete-button"></button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Add Task</h2>
+    <form method="POST">
+        <label for="event_task">Task:</label>
+        <input type="text" id="event_task" name="event_task"><br><br>
+        <label for="event_time">Time in mins:</label>
+        <input type="number" id="event_time" name="event_time"><br><br>
+        <input type="submit" value="Add Task">
+    </form>
+    <form action="/pomodoro">
+        <div>
+          <button>Pomodoro</button>
+        </div>
+      </form>
+</body>
+</html>

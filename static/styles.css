@@ -1,4 +1,103 @@
-/* Style the button */
+body {
+  background-color: #4bb8b8;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  background-color: #0077cc;
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #005ea3;
+}
+
+
+
+
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #0077cc;
+  font-size: 36px;
+}
+
+h2 {
+  color: #0077cc;
+  font-size: 24px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+}
+
+table, th, td {
+  border: 1px solid #0077cc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+input[type="text"], input[type="number"], input[type= "password"] {
+  border: 1px solid #0077cc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+input[type="submit"] {
+  background-color: #0077cc;
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+  background-color: #005ea3;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -6,19 +105,19 @@
   height: 100vh;
 }
 
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 1em 2em;
-  font-size: 1.2em;
+.delete-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f44336; /* red */
+  color: #fff; /* white */
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 0.5em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  line-height: 30px;
+  text-align: center;
 }
 
-/* Change the button background color on hover */
-button:hover {
-  background-color: #0056b3;
+.delete-button:hover {
+  background-color: #d32f2f; /* darker red */
+  cursor: pointer;
 }
