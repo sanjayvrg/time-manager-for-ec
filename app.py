@@ -138,13 +138,31 @@ def pomodoro():
                     tasks.append({'task': task['task'], 'time': 25 - current_value})
                     time_left -= 25 - current_value
                     total_time += 25
-                    tasks.append({'task': 'Break', 'time': 5})
-                    total_time += 5
                     current_value = 0
         
                 current_value = time_left
                 tasks.append({'task': task['task'], 'time': time_left})
                 total_time += time_left
+
+            sum = 0
+            numbreaks = 0
+            for i in range(len(tasks)):
+                #print(tasks[i]['time'])
+                print(sum)
+                going = False
+                if sum < 25:
+                    sum += tasks[i]['time']
+                    going = True
+                if going == True:
+                    continue
+                sum = 0
+                tasks.insert(i + numbreaks, {'task': 'Break', 'time': 5})
+                numbreaks += 1
+                print(numbreaks)
+                total_time += 5
+            
+            tasks.insert(-1, {'task': 'Break', 'time': 5})
+            total_time += 5
                 
                 
         num_pomodoros = total_time // 25 + 1
